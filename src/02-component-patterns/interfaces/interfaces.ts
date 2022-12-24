@@ -15,6 +15,11 @@ export interface ProductContextProps {
   product: Product;
 }
 
+export interface onChangeArgs {
+  product: Product;
+  count: number;
+}
+
 export interface ProductCardHOCProps {
   (Props: ProductCardProps): JSX.Element;
   Title: (Props: ProductTitleProps) => JSX.Element;
