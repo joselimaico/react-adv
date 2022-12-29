@@ -13,6 +13,7 @@ export interface Props {
   className?: string;
   style?: CSSProperties;
   onChange?: (args: onChangeArgs) => void;
+  value?: number;
 }
 
 export const ProductContext = createContext<ProductContextProps>(
@@ -26,8 +27,13 @@ export const ProductCard = ({
   className,
   style,
   onChange,
+  value,
 }: Props) => {
-  const { counter, handleChangeCounter } = useProduct({ onChange, product });
+  const { counter, handleChangeCounter } = useProduct({
+    onChange,
+    product,
+    value,
+  });
   return (
     <Provider value={{ counter, handleChangeCounter, product }}>
       <div className={`${styles.productCard} ${className}`} style={style}>

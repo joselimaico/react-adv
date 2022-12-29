@@ -20,6 +20,10 @@ export interface onChangeArgs {
   count: number;
 }
 
+export interface ProductInCart extends Product {
+  count: number;
+}
+
 export interface ProductCardHOCProps {
   (Props: ProductCardProps): JSX.Element;
   Title: (Props: ProductTitleProps) => JSX.Element;
